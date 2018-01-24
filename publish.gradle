@@ -40,14 +40,14 @@ bintray {
     dryRun = false
     publish = true
     pkg {
-        repo = 'naffe'
-        name = 'ws-test-simulator'
+        repo = 'io.naffe'
+        name = 'microsimulator-ws'
         desc = 'Web Service Simulator'
-        websiteUrl = 'https://github.com/naffe/ws-test-simulator'
-        issueTrackerUrl = 'https://github.com/naffe/ws-test-simulator/issues'
-        vcsUrl = 'https://github.com/naffe/ws-test-simulator.git'
+        websiteUrl = 'https://github.com/naffe/microsimulator-ws'
+        issueTrackerUrl = 'https://github.com/naffe/microsimulator-ws/issues'
+        vcsUrl = 'https://github.com/naffe/microsimulator-ws.git'
         licenses = ['Apache-2.0']
-        labels = ['ws-test-simulator', 'kotlin', 'Web Service Simulator']
+        labels = ['microsimulator-ws', 'kotlin', 'Web Service Simulator']
         publicDownloadNumbers = true
         //Optional version descriptor
         version {
