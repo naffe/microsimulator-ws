@@ -1,0 +1,7 @@
+path: /requestcountresource
+request:
+        filterType: callCount
+        filter: 2
+response:
+        body: this is the second response
+name: test.request.count.2

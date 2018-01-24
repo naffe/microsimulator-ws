@@ -1,0 +1,4 @@
+path: /requestcountresource
+response:
+        body: this is the third response
+name: test.request.count.3

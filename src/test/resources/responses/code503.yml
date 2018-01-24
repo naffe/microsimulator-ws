@@ -1,0 +1,9 @@
+path: /responsecode503
+httpMethod: post
+name: test.simple.7
+request:
+        filterType: contains
+        filter: seventh
+response:
+        statusCode: 503
+        body: this is the seventh response code

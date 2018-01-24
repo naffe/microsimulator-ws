@@ -1,0 +1,5 @@
+path: /filtersetroute1
+httpMethod: post
+response:
+          body: "response: FilteredByAction1 - false; route 3"
+priority: 9999

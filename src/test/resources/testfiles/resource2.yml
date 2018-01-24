@@ -1,0 +1,10 @@
+path: /helloresource2
+httpMethod: post
+request:
+        filterType: contains
+        filter: second
+response:
+        statusCode: 406
+        body: this is the second response
+name: test.simple.2
+latency: 5000-9000

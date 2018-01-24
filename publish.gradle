@@ -1,0 +1,62 @@
+def versionString = file('src/main/resources/ws-test-simulator-version.txt').text.trim()
+group = 'naffe'
+version = versionString
+
+// custom tasks for creating source/javadoc jars
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: dokka) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+    javadoc.failOnError = false
+}
+
+// add javadoc/source jar tasks as artifacts
+artifacts {
+    archives sourcesJar, javadocJar
+}
+
+task release() {
+    dependsOn 'assemble', 'bintrayUpload'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+        }
+    }
+}
+
+bintray {
+    user = project.hasProperty('bintray_user') ? bintray_user : ''
+    key = project.hasProperty('bintray_api_key') ? bintray_api_key : ''
+    publications = ['mavenJava']
+    dryRun = false
+    publish = true
+    pkg {
+        repo = 'naffe'
+        name = 'ws-test-simulator'
+        desc = 'Web Service Simulator'
+        websiteUrl = 'https://github.com/naffe/ws-test-simulator'
+        issueTrackerUrl = 'https://github.com/naffe/ws-test-simulator/issues'
+        vcsUrl = 'https://github.com/naffe/ws-test-simulator.git'
+        licenses = ['Apache-2.0']
+        labels = ['ws-test-simulator', 'kotlin', 'Web Service Simulator']
+        publicDownloadNumbers = true
+        //Optional version descriptor
+        version {
+            name = project.version
+            released = new Date()
+            mavenCentralSync {
+                sync = false
+            }
+        }
+    }
+}
+

@@ -1,0 +1,8 @@
+path: /valid1
+name: one
+request:
+        filterType: contains
+        filter: One
+response:
+        body: "this is the message"
+

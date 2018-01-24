@@ -1,0 +1,9 @@
+path: /responsecode500
+httpMethod: post
+name: test.simple.3
+request:
+        filterType: contains
+        filter: third
+response:
+        statusCode: 500
+        body: this is the third response code

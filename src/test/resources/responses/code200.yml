@@ -1,0 +1,9 @@
+path: /responsecode200
+httpMethod: post
+name: test.simple
+request:
+        filterType: contains
+        filter: first
+response:
+        statusCode: 200
+        body: this is the first response code

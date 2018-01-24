@@ -1,0 +1,8 @@
+path: /getmethod
+httpMethod: get
+name: test.get
+request:
+        filterType: contains
+        filter: second
+response:
+        body: this is the get method

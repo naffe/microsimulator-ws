@@ -1,0 +1,9 @@
+path: /responsecode410
+httpMethod: post
+name: test.simple.6
+request:
+        filterType: contains
+        filter: sixth
+response:
+        statusCode: 410
+        body: this is the sixth response code

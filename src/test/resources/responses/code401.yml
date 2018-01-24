@@ -1,0 +1,9 @@
+path: /responsecode401
+httpMethod: post
+name: test.simple.4
+request:
+        filterType: contains
+        filter: fourth
+response:
+        statusCode: 401
+        body: this is the fourth response code

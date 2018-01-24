@@ -1,0 +1,4 @@
+path: /hello
+response:
+          body: hello world
+name: one

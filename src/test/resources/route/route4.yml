@@ -1,0 +1,6 @@
+path: /publish
+httpMethod: post
+response:
+          body: FilteredByAction4
+priority: 4
+

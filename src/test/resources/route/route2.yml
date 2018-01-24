@@ -1,0 +1,8 @@
+path: /publish
+httpMethod: post
+request:
+        filterType: contains
+        filter: Action2
+response:
+          body: FilteredByAction2
+priority: 2

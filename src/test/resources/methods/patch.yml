@@ -1,0 +1,8 @@
+path: /patchmethod
+httpMethod: patch
+name: test.patch
+request:
+        filterType: contains
+        filter: sixth
+response:
+        body: this is the patch method

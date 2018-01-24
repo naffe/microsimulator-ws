@@ -1,0 +1,9 @@
+path: /responsecode404
+httpMethod: post
+name: test.simple.2
+request:
+        filterType: contains
+        filter: second
+response:
+        statusCode: 404
+        body: this is the second response code

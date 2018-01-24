@@ -1,0 +1,7 @@
+path: /requestcountresource
+name: test.request.count.1
+request:
+        filterType: callCount
+        filter: 1
+response:
+        body: this is the first response

@@ -1,0 +1,11 @@
+path: /hellopostcomplex
+httpMethod: post
+name: hellopostcomplex
+request:
+        contentType: application/json
+        filterType: contains
+        filter: hello
+response:
+        contentType: application/text
+        body: helloworld
+latency: 5000-10000

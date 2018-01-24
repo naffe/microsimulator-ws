@@ -1,0 +1,7 @@
+path: /characterresource
+httpMethod: post
+name: test.simple*!#
+response:
+         body: this is the special character response
+
+

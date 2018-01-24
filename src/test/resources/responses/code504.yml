@@ -1,0 +1,9 @@
+path: /responsecode504
+httpMethod: post
+name: test.simple.8
+request:
+        filterType: contains
+        filter: eigth
+response:
+        statusCode: 504
+        body: this is the eight response code

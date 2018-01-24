@@ -1,0 +1,77 @@
+group 'naffe'
+version '4.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.2.0'
+    ext.dokka_version = '0.9.15'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3"
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:${dokka_version}"
+
+    }
+}
+
+
+apply plugin: 'kotlin'
+apply plugin: 'groovy'
+apply plugin: 'org.jetbrains.dokka'
+
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+apply from: file('publish.gradle')
+
+repositories {
+    mavenCentral()
+}
+
+compileKotlin
+        {
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
+            kotlinOptions
+                    {
+                        jvmTarget = "1.8"
+                    }
+        }
+
+dokka {
+    outputFormat = 'javadoc'
+    outputDirectory = "$buildDir/javadoc"
+}
+
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.0"
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.0"
+    compile 'io.github.microutils:kotlin-logging:1.4.6'
+    compile 'org.apache.commons:commons-lang3:3.7'
+    compile "commons-io:commons-io:2.6"
+    compile 'org.reflections:reflections:0.9.11'
+    compile "com.sparkjava:spark-core:2.7.1"
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile 'org.slf4j:slf4j-simple:1.7.5'
+
+    testCompile('org.codehaus.groovy:groovy-all:2.4.13')
+    testCompile "org.spockframework:spock-core:1.1-groovy-2.4"
+    testCompile 'io.rest-assured:rest-assured:3.0.0'
+
+
+    test.onlyIf {
+        // run tests locally until we look at the test automation.
+        Boolean.getBoolean('run.tests')
+    }
+
+}
+
+jar {
+    from rootProject.file('LICENSE')
+    from rootProject.file('NOTICE')
+}
+

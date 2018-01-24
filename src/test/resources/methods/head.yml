@@ -1,0 +1,7 @@
+path: /headmethod
+httpMethod: head
+responseCode: 200
+name: test.head
+request:
+        filterType: contains
+        filter: fifth

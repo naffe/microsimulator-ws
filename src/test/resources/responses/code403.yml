@@ -1,0 +1,9 @@
+path: /responsecode403
+httpMethod: post
+name: test.simple.5
+request:
+        filterType: contains
+        filter: fifth
+response:
+        statusCode: 403
+        body: this is the fifth response code

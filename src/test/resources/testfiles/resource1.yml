@@ -1,0 +1,8 @@
+path: /helloresource1
+httpMethod: post
+name: test.simple
+request:
+        filterType: contains
+        filter: first
+response:
+        body: this is the first response

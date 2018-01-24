@@ -1,0 +1,8 @@
+path: /deletemethod
+httpMethod: delete
+name: test.delete
+request:
+        filterType: contains
+        filter: fourth
+response:
+        body: this is the delete method

@@ -1,0 +1,10 @@
+path: /latencyresource
+httpMethod: post
+request:
+        filterType: contains
+        filter: first
+response:
+        statusCode: 20
+        body: this is the request
+name: test.simple
+latency: 5000-10000

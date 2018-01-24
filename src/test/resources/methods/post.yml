@@ -1,0 +1,8 @@
+path: /postmethod
+httpMethod: post
+name: test.post
+request:
+        filterType: contains
+        filter: first
+response:
+        body: this is the post method

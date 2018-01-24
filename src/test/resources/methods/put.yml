@@ -1,0 +1,8 @@
+path: /putmethod
+httpMethod: put
+name: test.put
+request:
+        filterType: contains
+        filter: third
+response:
+        body: this is the put method

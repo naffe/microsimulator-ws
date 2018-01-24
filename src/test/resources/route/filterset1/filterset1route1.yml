@@ -1,0 +1,10 @@
+path: /filtersetroute1
+httpMethod: post
+request:
+        filterType: contains
+        filter: Action1
+response:
+        body: "response: FilteredByAction1 - true; route 1"
+name: test.simple
+priority: 1
+tag: One, Two
