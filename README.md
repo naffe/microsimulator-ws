@@ -1,6 +1,8 @@
+[![CircleCI](https://circleci.com/gh/naffe/microsimulator-ws.svg?style=svg)](https://circleci.com/gh/naffe/microsimulator-ws)
+
 # MicroSimulator-WS
  
-The MicroSimulator-WS is an light weight testing library that allows for you to simulate (mock out) HTTP webservice calls within Unit & Integration tests. A key benefit would be when do not want to introduce mocks or couple your tests to external services or system but yet still need to test such interactions. 
+The microsimulator-WS is an light weight testing library that allows for you to simulate (mock out) HTTP webservice calls within Unit & Integration tests. A key benefit would be when do not want to introduce mocks or couple your tests to external services or system but yet still need to test such interactions. 
  
  **When would you use the MicroSimulator library?**
 
