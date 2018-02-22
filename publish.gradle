@@ -1,5 +1,5 @@
 def versionString = file('src/main/resources/microsimulator-ws-version.txt').text.trim()
-group = 'naffe'
+group = 'io.naffe'
 version = versionString
 
 // custom tasks for creating source/javadoc jars

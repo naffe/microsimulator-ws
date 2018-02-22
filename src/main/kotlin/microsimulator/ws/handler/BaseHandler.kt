@@ -248,13 +248,16 @@ class BaseHandler {
     }
 
     fun processRequest(request: Request, response: Response): String {
-        logger.info("request {}, of content-type {}, with body:{}", request.contextPath(), request.contentType(), request.body())
+        logger.info("request {}, of content-type {}, with body:{}", request.pathInfo(), request.contentType(), request.body())
         val wsSimulationContext = loadSimulationContext(request)
         return if (wsSimulationContext == null) {
+            logger.info("<REQUEST NOT FOUND:{}>", request.pathInfo())
             response.status(404)
             ""
-        } else
+        } else {
+            logger.info("Loaded simulation with name:{} for request-path:{}, ", wsSimulationContext.microSimulation.name, request.pathInfo())
             processRequestWithContext(wsSimulationContext, request, response)
+        }
     }
 
     private fun processRequestWithContext(microSimulationContext: MicroSimulationContext, request: Request, response: Response): String {
@@ -286,7 +289,7 @@ class BaseHandler {
             return wsSimulation.response.body
         val requestFile = wsSimulation.response.body.substringAfter("wssimulatorRequest:")
         var content = ClassPathLoader.readClasspathResourceQuietly(requestFile)
-        if (content.isNotEmpty()) {
+        if (content.isEmpty()) {
             val classpath = FilenameUtils.getFullPathNoEndSeparator(microSimulationContext.classpathContext)
             content = ClassPathLoader.readClasspathResourceQuietly(classpath + "/" + requestFile)
         }
